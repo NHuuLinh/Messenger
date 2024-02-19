@@ -47,6 +47,10 @@
 		A42B03D22B73E4B6008EC630 /* MessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42B03D12B73E4B6008EC630 /* MessengerTests.swift */; };
 		A42B03DC2B73E4B6008EC630 /* MessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42B03DB2B73E4B6008EC630 /* MessengerUITests.swift */; };
 		A42B03DE2B73E4B6008EC630 /* MessengerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42B03DD2B73E4B6008EC630 /* MessengerUITestsLaunchTests.swift */; };
+		A43419702B8361C400C663DF /* NewMessengerConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434196F2B8361C400C663DF /* NewMessengerConstant.swift */; };
+		A47F01C52B81F40F006A744F /* NewMessengetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47F01C32B81F40E006A744F /* NewMessengetTableViewCell.swift */; };
+		A47F01C62B81F40F006A744F /* NewMessengetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47F01C42B81F40F006A744F /* NewMessengetTableViewCell.xib */; };
+		A47F01C92B81F6EA006A744F /* NewMessengetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47F01C82B81F6EA006A744F /* NewMessengetViewController.swift */; };
 		CC26E383FB2FC745B5995656 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A3325285E1E69462685D3D /* Pods_Messenger.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +118,10 @@
 		A42B03D72B73E4B6008EC630 /* MessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42B03DB2B73E4B6008EC630 /* MessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerUITests.swift; sourceTree = "<group>"; };
 		A42B03DD2B73E4B6008EC630 /* MessengerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A434196F2B8361C400C663DF /* NewMessengerConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessengerConstant.swift; sourceTree = "<group>"; };
+		A47F01C32B81F40E006A744F /* NewMessengetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessengetTableViewCell.swift; sourceTree = "<group>"; };
+		A47F01C42B81F40F006A744F /* NewMessengetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewMessengetTableViewCell.xib; sourceTree = "<group>"; };
+		A47F01C82B81F6EA006A744F /* NewMessengetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewMessengetViewController.swift; path = "New Mesenger/NewMessengetViewController.swift"; sourceTree = "<group>"; };
 		B24B082932A266AFD89AC7C9 /* Pods-Messenger-MessengerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger-MessengerUITests.release.xcconfig"; path = "Target Support Files/Pods-Messenger-MessengerUITests/Pods-Messenger-MessengerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B749F6B4B94F5FF0A54C2073 /* Pods-Messenger-MessengerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger-MessengerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Messenger-MessengerUITests/Pods-Messenger-MessengerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C074E32D138F1CD0CF85180D /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
@@ -285,13 +293,14 @@
 				A4213FC42B7E69BE001658D0 /* Account */,
 				A42B03B72B73E4B1008EC630 /* AppDelegate.swift */,
 				A42B03B92B73E4B1008EC630 /* SceneDelegate.swift */,
-				A42140052B7E7539001658D0 /* MainViewController.swift */,
+				A47F01C22B81F3C1006A744F /* Home Screen */,
 				A42B03BD2B73E4B1008EC630 /* Main.storyboard */,
 				A42B03C32B73E4B6008EC630 /* Assets.xcassets */,
 				A42B03C52B73E4B6008EC630 /* LaunchScreen.storyboard */,
 				A42B03C82B73E4B6008EC630 /* Info.plist */,
 				A42140072B7E79D0001658D0 /* GoogleService-Info.plist */,
 				A42B03C02B73E4B1008EC630 /* Messenger.xcdatamodeld */,
+				A434196F2B8361C400C663DF /* NewMessengerConstant.swift */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -311,6 +320,25 @@
 				A42B03DD2B73E4B6008EC630 /* MessengerUITestsLaunchTests.swift */,
 			);
 			path = MessengerUITests;
+			sourceTree = "<group>";
+		};
+		A47F01C22B81F3C1006A744F /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A42140052B7E7539001658D0 /* MainViewController.swift */,
+				A47F01C82B81F6EA006A744F /* NewMessengetViewController.swift */,
+				A47F01C72B81F422006A744F /* New Mesenger */,
+			);
+			path = "Home Screen";
+			sourceTree = "<group>";
+		};
+		A47F01C72B81F422006A744F /* New Mesenger */ = {
+			isa = PBXGroup;
+			children = (
+				A47F01C32B81F40E006A744F /* NewMessengetTableViewCell.swift */,
+				A47F01C42B81F40F006A744F /* NewMessengetTableViewCell.xib */,
+			);
+			path = "New Mesenger";
 			sourceTree = "<group>";
 		};
 		CD31691CA436C7A7EAA1A854 /* Pods */ = {
@@ -435,6 +463,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47F01C62B81F40F006A744F /* NewMessengetTableViewCell.xib in Resources */,
 				A42B03C72B73E4B6008EC630 /* LaunchScreen.storyboard in Resources */,
 				A42B03C42B73E4B6008EC630 /* Assets.xcassets in Resources */,
 				A42140082B7E79D0001658D0 /* GoogleService-Info.plist in Resources */,
@@ -575,6 +604,7 @@
 				A4213FD32B7E69BE001658D0 /* ProfileViewController.swift in Sources */,
 				A4213FF62B7E6CA9001658D0 /* Validator.swift in Sources */,
 				A4213FD02B7E69BE001658D0 /* LoginViewController.swift in Sources */,
+				A47F01C52B81F40F006A744F /* NewMessengetTableViewCell.swift in Sources */,
 				A4213FCE2B7E69BE001658D0 /* RegisterPresenter.swift in Sources */,
 				A42140042B7E6CB5001658D0 /* NavigationHepler.swift in Sources */,
 				A42140012B7E6CB5001658D0 /* Constants.swift in Sources */,
@@ -587,6 +617,7 @@
 				A4213FF02B7E6CA9001658D0 /* AQIHandle.swift in Sources */,
 				A4213FDB2B7E6B33001658D0 /* OnboardingViewController.swift in Sources */,
 				A42B03B82B73E4B1008EC630 /* AppDelegate.swift in Sources */,
+				A43419702B8361C400C663DF /* NewMessengerConstant.swift in Sources */,
 				A4213FDD2B7E6B33001658D0 /* OnbroadingSlide.swift in Sources */,
 				A42B03BA2B73E4B1008EC630 /* SceneDelegate.swift in Sources */,
 				A4213FF42B7E6CA9001658D0 /* UIView+Extension.swift in Sources */,
@@ -596,6 +627,7 @@
 				A42140032B7E6CB5001658D0 /* UserDefaults.swift in Sources */,
 				A4213FF32B7E6CA9001658D0 /* Animation.swift in Sources */,
 				A4213FDA2B7E6B33001658D0 /* OnboardingCollectionViewCell.swift in Sources */,
+				A47F01C92B81F6EA006A744F /* NewMessengetViewController.swift in Sources */,
 				A42140002B7E6CB5001658D0 /* UIStatusBarStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,8 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 import KeychainSwift
 
 protocol RegisterPresenter {
@@ -63,11 +65,23 @@ class RegisterPresenterImpl: RegisterPresenter {
             // Lưu email và password vào Keychain
             self.keychain.set(email, forKey: "email")
             self.keychain.set(password, forKey: "password")
+            loadDataFromFirebase(email: email)
             // Hiển thị thông báo cho người dùng về việc kiểm tra email để xác thực
             self.registerVC.showAlert(title: "Success", message: "Đăng ký thành công. Vui lòng kiểm tra email để xác thực tài khoản.") {
                 self.registerVC.navigationController?.popToRootViewController(animated: true)
             }
         }
+    }
+    func loadDataFromFirebase(email: String) {
+        let databaseRef = Database.database().reference()
+        //self.registerVC.showLoading(isShow: true)
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+            return
+        }
+        guard let currentUser = Auth.auth().currentUser?.uid else { return }
+        let userRef = databaseRef.child("users").child(currentUser)
+        userRef.child("email").setValue(email)
+        userRef.child("id").setValue(currentUserID)
     }
     
     func loginBySocialNW(){

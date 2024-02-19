@@ -22,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
 
         print("url của file là: \(urls)")
-        FirebaseApp.configure()
+        let options = FirebaseOptions(contentsOfFile: Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")!)
+        options?.databaseURL = "https://messanger-dbcc8-default-rtdb.asia-southeast1.firebasedatabase.app"
+        FirebaseApp.configure(options: options!)
+
         NetworkMonitor.shared.startMonitoring()
 
 

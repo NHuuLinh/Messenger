@@ -22,10 +22,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--New Messenget View Controller-->
         <scene sceneID="R8o-ZS-mP3">
             <objects>
-                <viewController id="R4L-Ch-g1f" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewMessengetViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R4L-Ch-g1f" customClass="NewMessengetViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D4Y-4E-1o1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,18 +55,28 @@
                                         </connections>
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CZb-oY-e6V">
-                                        <rect key="frame" x="0.0" y="150" width="393" height="702"/>
+                                        <rect key="frame" x="0.0" y="150" width="393" height="402"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eja-U2-duy">
+                                        <rect key="frame" x="10" y="63.666666666666657" width="34" height="32"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="arrow-back"/>
+                                        <connections>
+                                            <action selector="backBtn:" destination="R4L-Ch-g1f" eventType="touchUpInside" id="ser-4k-mhB"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="Color Main Theme"/>
                                 <constraints>
+                                    <constraint firstItem="Eja-U2-duy" firstAttribute="leading" secondItem="bzW-oi-xDB" secondAttribute="leading" constant="10" id="4Tp-MM-yh2"/>
                                     <constraint firstItem="iIh-gF-YAE" firstAttribute="top" secondItem="Byj-2y-p9I" secondAttribute="bottom" constant="10" id="GaL-GI-Dp7"/>
                                     <constraint firstAttribute="trailing" secondItem="CZb-oY-e6V" secondAttribute="trailing" id="Jhy-QV-vRW"/>
                                     <constraint firstItem="CZb-oY-e6V" firstAttribute="top" secondItem="iIh-gF-YAE" secondAttribute="bottom" constant="10" id="OzF-xJ-M9U"/>
                                     <constraint firstItem="Byj-2y-p9I" firstAttribute="centerX" secondItem="bzW-oi-xDB" secondAttribute="centerX" id="W5p-CS-tWX"/>
-                                    <constraint firstAttribute="bottom" secondItem="CZb-oY-e6V" secondAttribute="bottom" id="aGn-eo-kRU"/>
+                                    <constraint firstAttribute="bottom" secondItem="CZb-oY-e6V" secondAttribute="bottom" constant="300" id="aGn-eo-kRU"/>
                                     <constraint firstAttribute="trailing" secondItem="iIh-gF-YAE" secondAttribute="trailing" constant="20" id="hOO-we-7Dm"/>
+                                    <constraint firstItem="Eja-U2-duy" firstAttribute="centerY" secondItem="Byj-2y-p9I" secondAttribute="centerY" id="haG-uC-fN2"/>
                                     <constraint firstItem="CZb-oY-e6V" firstAttribute="leading" secondItem="bzW-oi-xDB" secondAttribute="leading" id="moB-7A-38J"/>
                                     <constraint firstItem="iIh-gF-YAE" firstAttribute="leading" secondItem="bzW-oi-xDB" secondAttribute="leading" constant="20" id="nTJ-kU-IYz"/>
                                 </constraints>
@@ -83,6 +93,10 @@
                             <constraint firstItem="xhd-q4-leG" firstAttribute="trailing" secondItem="bzW-oi-xDB" secondAttribute="trailing" id="ppv-5e-KxS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="newMessengerTableView" destination="CZb-oY-e6V" id="Ggj-lv-zxc"/>
+                        <outlet property="searchBar" destination="iIh-gF-YAE" id="VKh-U3-TF9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NM4-2r-4Ao" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,6 +119,9 @@
                                         <state key="normal" title="Menu">
                                             <color key="titleColor" name="Color Font"/>
                                         </state>
+                                        <connections>
+                                            <action selector="menuBtn:" destination="Z0F-cC-otW" eventType="touchUpInside" id="B5E-2r-mfo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBv-hG-pe7">
                                         <rect key="frame" x="337" y="5" width="31" height="30"/>
@@ -112,6 +129,9 @@
                                         <state key="normal" title="New">
                                             <color key="titleColor" name="Color Font"/>
                                         </state>
+                                        <connections>
+                                            <action selector="BackBtn:" destination="Z0F-cC-otW" eventType="touchUpInside" id="hdP-gQ-9P4"/>
+                                        </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nfP-3p-sGq">
                                         <rect key="frame" x="0.0" y="35" width="373" height="724"/>
@@ -2710,6 +2730,7 @@
         <image name="Editoff" width="24" height="24"/>
         <image name="FBIcon" width="25" height="24"/>
         <image name="WarningLB" width="16" height="17"/>
+        <image name="arrow-back" width="34" height="32"/>
         <image name="avatar" width="192" height="192"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="clear" catalog="system" width="128" height="114"/>

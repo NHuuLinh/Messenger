@@ -6,7 +6,7 @@ import KeychainSwift
 enum ForgotPasswordFormField {
     case email
 }
-class ForgotPasswordViewController: UIViewController,checkValid {
+class ForgotPasswordViewController: UIViewController,checkValid, UITextFieldDelegate {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var emailErrorView: UIView!
     @IBOutlet weak var emailerrorTF: UITextField!
@@ -31,10 +31,25 @@ class ForgotPasswordViewController: UIViewController,checkValid {
         translateLangue()
     }
     func setupView() {
+        emailTF.delegate = self
         clearEmailBtn.isHidden = true
         navigationController?.isNavigationBarHidden = true
         emailTF.text = keychain.get("TemporaryEmail")
         checkValidInput()
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        if let touch = touches.first {
+            if touch.view != emailTextView {
+                self.view.endEditing(true)
+            } else {
+                print("touchesBegan")
+                print("\(String(describing: touch.view?.accessibilityIdentifier))")
+            }
+        }
     }
     @IBAction func editEmail(_ textField: UITextField) {
         clearEmailBtn.isHidden = textField.text?.isEmpty ?? true

@@ -784,7 +784,7 @@ DEPENDENCIES:
   - FirebaseFirestore
   - KeychainSwift
   - Kingfisher
-  - MBProgressHUD (~> 1.2.0)
+  - MBProgressHUD
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -846,6 +846,6 @@ SPEC CHECKSUMS:
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: a2d1c808f6f709b4db4281a6ef3d063adb84e4fe
+PODFILE CHECKSUM: 56c8fd30b2df86736e7d491e6b4b91cc73c7b5ee
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.15.2

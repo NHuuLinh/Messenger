@@ -7,7 +7,7 @@ protocol RegisterDisplay: UIViewController {
     
 }
 
-class RegisterViewController: UIViewController, RegisterDisplay,checkValid {
+class RegisterViewController: UIViewController, RegisterDisplay,checkValid, UITextFieldDelegate {
     
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var emailErrorView: UIView!
@@ -52,12 +52,29 @@ class RegisterViewController: UIViewController, RegisterDisplay,checkValid {
     }
     private func setupView(){
         clearBtn.isHidden = true
+        emailTF.delegate = self
+        passwordTF.delegate = self
         navigationController?.setNavigationBarHidden(true, animated: true)
         emailTF.text = keychain.get("TemporaryEmail")
         passwordTF.text = keychain.get("TemporaryPassword")
         rePassworđTF.text = keychain.get("TemporaryPassword")
         checkValidInput()
         registerPresenter = RegisterPresenterImpl(registerVC: self)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        if let touch = touches.first {
+            if touch.view != passwordTextView
+                || touch.view != emailTextView {
+                self.view.endEditing(true)
+            } else {
+                print("touchesBegan")
+                print("\(String(describing: touch.view?.accessibilityIdentifier))")
+            }
+        }
     }
     
     func goToForgotPassword() {

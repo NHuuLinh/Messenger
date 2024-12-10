@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		555F55302D01521A007628C1 /* UserListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F552E2D01521A007628C1 /* UserListCollectionViewCell.swift */; };
+		555F55312D01521A007628C1 /* UserListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555F552F2D01521A007628C1 /* UserListCollectionViewCell.xib */; };
+		5566A4D32CFF012500303DF4 /* MenuViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566A4D22CFF012500303DF4 /* MenuViewcontroller.swift */; };
+		5566A4D52CFF015A00303DF4 /* MenuViewcontroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5566A4D42CFF015A00303DF4 /* MenuViewcontroller.xib */; };
+		5566A4D92CFF034400303DF4 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5566A4D82CFF034400303DF4 /* MenuTableViewCell.xib */; };
+		5566A4DA2CFF034400303DF4 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566A4D72CFF034400303DF4 /* MenuTableViewCell.swift */; };
 		59E175D7ACA6D4235D4CF591 /* Pods_MessengerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848F1D86A5C67DCA7900553C /* Pods_MessengerTests.framework */; };
 		74039337A789B25E7433B06C /* Pods_Messenger_MessengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 873EF9B4383E9FDBD9F252F5 /* Pods_Messenger_MessengerUITests.framework */; };
 		A4213FCE2B7E69BE001658D0 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4213FC52B7E69BE001658D0 /* RegisterPresenter.swift */; };
@@ -74,6 +80,12 @@
 /* Begin PBXFileReference section */
 		2FE13205D1BCD5E140536D7F /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
 		41F8B5F09C01E2D761F2D456 /* Pods-MessengerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessengerTests.debug.xcconfig"; path = "Target Support Files/Pods-MessengerTests/Pods-MessengerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		555F552E2D01521A007628C1 /* UserListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCollectionViewCell.swift; sourceTree = "<group>"; };
+		555F552F2D01521A007628C1 /* UserListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListCollectionViewCell.xib; sourceTree = "<group>"; };
+		5566A4D22CFF012500303DF4 /* MenuViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewcontroller.swift; sourceTree = "<group>"; };
+		5566A4D42CFF015A00303DF4 /* MenuViewcontroller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewcontroller.xib; sourceTree = "<group>"; };
+		5566A4D72CFF034400303DF4 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		5566A4D82CFF034400303DF4 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		848F1D86A5C67DCA7900553C /* Pods_MessengerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessengerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873EF9B4383E9FDBD9F252F5 /* Pods_Messenger_MessengerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger_MessengerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4213FC52B7E69BE001658D0 /* RegisterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
@@ -165,6 +177,17 @@
 				848F1D86A5C67DCA7900553C /* Pods_MessengerTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5566A4D62CFF021E00303DF4 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				5566A4D22CFF012500303DF4 /* MenuViewcontroller.swift */,
+				5566A4D42CFF015A00303DF4 /* MenuViewcontroller.xib */,
+				5566A4D72CFF034400303DF4 /* MenuTableViewCell.swift */,
+				5566A4D82CFF034400303DF4 /* MenuTableViewCell.xib */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		A4213FC42B7E69BE001658D0 /* Account */ = {
@@ -326,7 +349,10 @@
 			isa = PBXGroup;
 			children = (
 				A42140052B7E7539001658D0 /* MainViewController.swift */,
+				555F552E2D01521A007628C1 /* UserListCollectionViewCell.swift */,
+				555F552F2D01521A007628C1 /* UserListCollectionViewCell.xib */,
 				A47F01C82B81F6EA006A744F /* NewMessengetViewController.swift */,
+				5566A4D62CFF021E00303DF4 /* Menu */,
 				A47F01C72B81F422006A744F /* New Mesenger */,
 			);
 			path = "Home Screen";
@@ -466,9 +492,12 @@
 				A47F01C62B81F40F006A744F /* NewMessengetTableViewCell.xib in Resources */,
 				A42B03C72B73E4B6008EC630 /* LaunchScreen.storyboard in Resources */,
 				A42B03C42B73E4B6008EC630 /* Assets.xcassets in Resources */,
+				5566A4D52CFF015A00303DF4 /* MenuViewcontroller.xib in Resources */,
 				A42140082B7E79D0001658D0 /* GoogleService-Info.plist in Resources */,
 				A4213FDC2B7E6B33001658D0 /* OnboardingCollectionViewCell.xib in Resources */,
+				5566A4D92CFF034400303DF4 /* MenuTableViewCell.xib in Resources */,
 				A42B03BF2B73E4B1008EC630 /* Main.storyboard in Resources */,
+				555F55312D01521A007628C1 /* UserListCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,11 +628,13 @@
 				A4213FF72B7E6CA9001658D0 /* DateFormate.swift in Sources */,
 				A4213FD22B7E69BE001658D0 /* RegisterViewController.swift in Sources */,
 				A4213FF52B7E6CA9001658D0 /* UVIndex.swift in Sources */,
+				5566A4D32CFF012500303DF4 /* MenuViewcontroller.swift in Sources */,
 				A4213FD12B7E69BE001658D0 /* LoginPresenter.swift in Sources */,
 				A4213FE12B7E6B5B001658D0 /* NoInternetAccessViewController.swift in Sources */,
 				A4213FD32B7E69BE001658D0 /* ProfileViewController.swift in Sources */,
 				A4213FF62B7E6CA9001658D0 /* Validator.swift in Sources */,
 				A4213FD02B7E69BE001658D0 /* LoginViewController.swift in Sources */,
+				5566A4DA2CFF034400303DF4 /* MenuTableViewCell.swift in Sources */,
 				A47F01C52B81F40F006A744F /* NewMessengetTableViewCell.swift in Sources */,
 				A4213FCE2B7E69BE001658D0 /* RegisterPresenter.swift in Sources */,
 				A42140042B7E6CB5001658D0 /* NavigationHepler.swift in Sources */,
@@ -628,6 +659,7 @@
 				A4213FF32B7E6CA9001658D0 /* Animation.swift in Sources */,
 				A4213FDA2B7E6B33001658D0 /* OnboardingCollectionViewCell.swift in Sources */,
 				A47F01C92B81F6EA006A744F /* NewMessengetViewController.swift in Sources */,
+				555F55302D01521A007628C1 /* UserListCollectionViewCell.swift in Sources */,
 				A42140002B7E6CB5001658D0 /* UIStatusBarStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -814,6 +846,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -821,6 +854,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Nguyen-Huu-Linh.Messenger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -843,6 +880,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -850,6 +888,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Nguyen-Huu-Linh.Messenger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

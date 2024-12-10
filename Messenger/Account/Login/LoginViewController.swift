@@ -12,7 +12,7 @@ enum LoginFormField {
     case password
 }
 
-class LoginViewController: UIViewController, LoginViewControllerDisplay,checkValid {
+final class LoginViewController: UIViewController, LoginViewControllerDisplay,checkValid, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var emailErrorView: UIView!
@@ -48,13 +48,32 @@ class LoginViewController: UIViewController, LoginViewControllerDisplay,checkVal
         super.viewDidLoad()
         setupView()
         translateLangue()
+//        self.view.endEditing(<#T##Bool#>)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        if let touch = touches.first {
+            if touch.view != passwordTextView
+                || touch.view != emailTextView {
+                self.view.endEditing(true)
+            } else {
+                print("touchesBegan")
+                print("\(String(describing: touch.view?.accessibilityIdentifier))")
+            }
+        }
     }
     private func setupView(){
         clearBtn.isHidden = true
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         navigationController?.setNavigationBarHidden(true, animated: true)
         //loading email,password người dùng đã đăng nhập thành công
         emailTF.text = keychain.get("email")
         passwordTF.text = keychain.get("password")
+        emailTF.delegate = self
+        passwordTF.delegate = self
         checkValidInput()
         loginPresenter = LoginPresenterImpl(loginVC: self)
     }

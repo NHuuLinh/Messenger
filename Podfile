@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# platform :ios, '15.0'
 
 target 'Messenger' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -14,7 +14,7 @@ target 'Messenger' do
   pod 'KeychainSwift'
   pod 'FirebaseDatabase'
   pod 'FirebaseFirestore'
-  pod 'MBProgressHUD', '~> 1.2.0'
+  pod 'MBProgressHUD'
   pod 'Firebase/Storage'
 
   target 'MessengerTests' do
@@ -29,6 +29,7 @@ target 'Messenger' do
 end
 
 post_install do |installer|
+  # Thiết lập IPHONEOS_DEPLOYMENT_TARGET cho tất cả các target
   installer.generated_projects.each do |project|
     project.targets.each do |target|
       target.build_configurations.each do |config|
@@ -36,4 +37,18 @@ post_install do |installer|
       end
     end
   end
+
+  # Xử lý các cảnh báo trong target BoringSSL-GRPC
+  installer.pods_project.targets.each do |target|
+    if target.name == 'BoringSSL-GRPC'
+      target.source_build_phase.files.each do |file|
+        if file.settings && file.settings['COMPILER_FLAGS']
+          flags = file.settings['COMPILER_FLAGS'].split
+          flags.reject! { |flag| flag == '-GCC_WARN_INHIBIT_ALL_WARNINGS' }
+          file.settings['COMPILER_FLAGS'] = flags.join(' ')
+        end
+      end
+    end
+  end
 end
+

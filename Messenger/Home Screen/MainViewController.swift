@@ -54,32 +54,7 @@ final class MainViewController: UIViewController {
     }
 
 }
-// MARK: - Các hàm xử lí liên quan đến kết nối internet
-extension MainViewController {
-    // Khi có thay đổi trạng thái mạng, bạn có thể gọi hàm này để cập nhật UIView
-    func handleNetworkStatusChange(isReachable: Bool) {
-        // Xử lý sự thay đổi trạng thái mạng tại đây
-        updateInternetView()
-    }
-    func updateInternetView() {
-        print("updateInternetView")
 
-        if NetworkMonitor.shared.isReachable {
-            DispatchQueue.main.async {
-                print("internet")
-//                self.noInternetView.isHidden = true
-//                self.noInternetViewConstraints.constant = -25
-            }
-        } else {
-            DispatchQueue.main.async {
-                print("no internet")
-
-//                self.noInternetView.isHidden = false
-//                self.noInternetViewConstraints.constant = 0
-            }
-        }
-    }
-}
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func registerCell(){

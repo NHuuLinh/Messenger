@@ -62,19 +62,19 @@ final class MainViewModel {
         private func fetchBook(documentId: String) {
           let docRef = db.collection("books").document(documentId)
           
-          docRef.getDocument(as: Book.self) { result in
-            switch result {
-            case .success(let book):
-              // A Book value was successfully initialized from the DocumentSnapshot.
-              self.book = book
-              self.errorMessage = nil
-            case .failure(let error):
-              // A Book value could not be initialized from the DocumentSnapshot.
-              self.errorMessage = "Error decoding document: \(error.localizedDescription)"
-            }
-          }
+//          docRef.getDocument(as: Book.self) { result in
+//            switch result {
+//            case .success(let book):
+//              // A Book value was successfully initialized from the DocumentSnapshot.
+//              self.book = book
+//              self.errorMessage = nil
+//            case .failure(let error):
+//              // A Book value could not be initialized from the DocumentSnapshot.
+//              self.errorMessage = "Error decoding document: \(error.localizedDescription)"
+//            }
+//          }
     }
-    func loadDataFromFirebase1() {
+    func loadDataFromFirebase() {
         let databaseRef = Database.database().reference()
         //self.registerVC.showLoading(isShow: true)
         guard let currentUserID = Auth.auth().currentUser?.uid else {
@@ -86,8 +86,30 @@ final class MainViewModel {
         userRef.child("id").setValue(currentUserID)
     }
     
+}
+// MARK: - Các hàm xử lí liên quan đến kết nối internet
+extension MainViewModel {
+    // Khi có thay đổi trạng thái mạng, bạn có thể gọi hàm này để cập nhật UIView
+    func handleNetworkStatusChange(isReachable: Bool) {
+        // Xử lý sự thay đổi trạng thái mạng tại đây
+        updateInternetView()
+    }
+    func updateInternetView() {
+        print("updateInternetView")
 
+        if NetworkMonitor.shared.isReachable {
+            DispatchQueue.main.async {
+                print("internet")
+//                self.noInternetView.isHidden = true
+//                self.noInternetViewConstraints.constant = -25
+            }
+        } else {
+            DispatchQueue.main.async {
+                print("no internet")
 
-
-    
+//                self.noInternetView.isHidden = false
+//                self.noInternetViewConstraints.constant = 0
+            }
+        }
+    }
 }

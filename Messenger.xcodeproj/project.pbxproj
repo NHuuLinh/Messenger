@@ -13,6 +13,8 @@
 		5566A4D52CFF015A00303DF4 /* MenuViewcontroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5566A4D42CFF015A00303DF4 /* MenuViewcontroller.xib */; };
 		5566A4D92CFF034400303DF4 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5566A4D82CFF034400303DF4 /* MenuTableViewCell.xib */; };
 		5566A4DA2CFF034400303DF4 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566A4D72CFF034400303DF4 /* MenuTableViewCell.swift */; };
+		5584C3FC2D0B40AB003CCD89 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584C3FB2D0B40AB003CCD89 /* MessageModel.swift */; };
+		5584C3FE2D0B43DE003CCD89 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584C3FD2D0B43DE003CCD89 /* MainViewModel.swift */; };
 		59E175D7ACA6D4235D4CF591 /* Pods_MessengerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848F1D86A5C67DCA7900553C /* Pods_MessengerTests.framework */; };
 		74039337A789B25E7433B06C /* Pods_Messenger_MessengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 873EF9B4383E9FDBD9F252F5 /* Pods_Messenger_MessengerUITests.framework */; };
 		A4213FCE2B7E69BE001658D0 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4213FC52B7E69BE001658D0 /* RegisterPresenter.swift */; };
@@ -86,6 +88,8 @@
 		5566A4D42CFF015A00303DF4 /* MenuViewcontroller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewcontroller.xib; sourceTree = "<group>"; };
 		5566A4D72CFF034400303DF4 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		5566A4D82CFF034400303DF4 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		5584C3FB2D0B40AB003CCD89 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		5584C3FD2D0B43DE003CCD89 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		848F1D86A5C67DCA7900553C /* Pods_MessengerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessengerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873EF9B4383E9FDBD9F252F5 /* Pods_Messenger_MessengerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger_MessengerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4213FC52B7E69BE001658D0 /* RegisterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
@@ -349,6 +353,8 @@
 			isa = PBXGroup;
 			children = (
 				A42140052B7E7539001658D0 /* MainViewController.swift */,
+				5584C3FD2D0B43DE003CCD89 /* MainViewModel.swift */,
+				5584C3FB2D0B40AB003CCD89 /* MessageModel.swift */,
 				555F552E2D01521A007628C1 /* UserListCollectionViewCell.swift */,
 				555F552F2D01521A007628C1 /* UserListCollectionViewCell.xib */,
 				A47F01C82B81F6EA006A744F /* NewMessengetViewController.swift */,
@@ -638,6 +644,7 @@
 				A47F01C52B81F40F006A744F /* NewMessengetTableViewCell.swift in Sources */,
 				A4213FCE2B7E69BE001658D0 /* RegisterPresenter.swift in Sources */,
 				A42140042B7E6CB5001658D0 /* NavigationHepler.swift in Sources */,
+				5584C3FE2D0B43DE003CCD89 /* MainViewModel.swift in Sources */,
 				A42140012B7E6CB5001658D0 /* Constants.swift in Sources */,
 				A4213FE22B7E6B5B001658D0 /* NetworkMonitor.swift in Sources */,
 				A42140022B7E6CB5001658D0 /* ThemeSetting.swift in Sources */,
@@ -657,6 +664,7 @@
 				A4213FE42B7E6BF4001658D0 /* SetingViewController.swift in Sources */,
 				A42140032B7E6CB5001658D0 /* UserDefaults.swift in Sources */,
 				A4213FF32B7E6CA9001658D0 /* Animation.swift in Sources */,
+				5584C3FC2D0B40AB003CCD89 /* MessageModel.swift in Sources */,
 				A4213FDA2B7E6B33001658D0 /* OnboardingCollectionViewCell.swift in Sources */,
 				A47F01C92B81F6EA006A744F /* NewMessengetViewController.swift in Sources */,
 				555F55302D01521A007628C1 /* UserListCollectionViewCell.swift in Sources */,

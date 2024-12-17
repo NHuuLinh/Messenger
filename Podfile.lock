@@ -780,8 +780,9 @@ DEPENDENCIES:
   - Charts
   - Firebase/Storage
   - FirebaseAuth
+  - FirebaseCore (~> 10.16.0)
   - FirebaseDatabase
-  - FirebaseFirestore
+  - FirebaseFirestore (~> 10.16.0)
   - KeychainSwift
   - Kingfisher
   - MBProgressHUD
@@ -846,6 +847,6 @@ SPEC CHECKSUMS:
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 56c8fd30b2df86736e7d491e6b4b91cc73c7b5ee
+PODFILE CHECKSUM: 6bcd85670d4d3ad94acdade179709c780ee06018
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

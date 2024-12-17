@@ -6,30 +6,24 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
-import FirebaseStorage
-import KeychainSwift
 
 
-class MainViewController: UIViewController {
+
+final class MainViewController: UIViewController {
     @IBOutlet weak var sideMenuView: UIView!
     @IBOutlet weak var messageCollectionView: UICollectionView!
-    typealias DataSource = UICollectionViewDiffableDataSource<MenuSection, MenuItem>
-    typealias SnapShot = NSDiffableDataSourceSnapshot<MenuSection, MenuItem>
     
-    private var databaseRef = Database.database().reference()
-    let isReachable = NetworkMonitor.shared.isReachable
-    let keychain = KeychainSwift()
-    var isHideMenu = true
-    let chidleView = MenuViewcontroller()
+    typealias DataSource = UICollectionViewDiffableDataSource<MenuSection, Document>
+    typealias SnapShot = NSDiffableDataSourceSnapshot<MenuSection, Document>
+    
+    private let chidleView = MenuViewcontroller()
     private lazy var dataSource = makeDataSource()
-    let item = [MenuItem]()
+    private let viewModel = MainViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenuView.isHidden = true
-        loadDataFromFirebase()
+        viewModel.loadDataFromFirebase()
         subViewHandle()
         // Do any additional setup after loading the view.
     }
@@ -58,37 +52,7 @@ class MainViewController: UIViewController {
         chidleView.isHideMenu = false
 //        logoutHandle()
     }
-    func logoutHandle() {
-        print("logout")
 
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-//                UserDefaults.standard.didOnMain = false
-            if firebaseAuth.currentUser == nil {
-//                    if isReachable {
-                        AppDelegate.scene?.goToLogin()
-//                    } else {
-//                    AppDelegate.scene?.routeToNoInternetAccess()
-//                    }
-            }  else {
-                print("Error: User is still signed in")
-            }
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
-        }
-    }
-    func loadDataFromFirebase() {
-        let databaseRef = Database.database().reference()
-        //self.registerVC.showLoading(isShow: true)
-        guard let currentUserID = Auth.auth().currentUser?.uid else {
-            return
-        }
-        guard let currentUser = Auth.auth().currentUser?.uid else { return }
-        let userRef = databaseRef.child("users").child(currentUser)
-        userRef.child("email").setValue(keychain.get("email"))
-        userRef.child("id").setValue(currentUserID)
-    }
 }
 // MARK: - Các hàm xử lí liên quan đến kết nối internet
 extension MainViewController {
@@ -134,6 +98,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDelegate
     func appllySnapShot(){
         var snapshot = SnapShot()
         snapshot.appendSections([.main])
-        snapshot.appendItems(<#T##identifiers: [MenuItem]##[MenuItem]#>)
+        snapshot.appendItems(viewModel.totalFriendList)
     }
 }

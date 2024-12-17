@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '15.0'
+# platform :ios, '15.6'
+
 
 target 'Messenger' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -13,9 +14,15 @@ target 'Messenger' do
   pod 'Charts'
   pod 'KeychainSwift'
   pod 'FirebaseDatabase'
-  pod 'FirebaseFirestore'
+#  pod 'FirebaseFirestore'
   pod 'MBProgressHUD'
   pod 'Firebase/Storage'
+  
+  pod 'FirebaseCore', '~> 10.16.0'
+  pod 'FirebaseFirestore', '~> 10.16.0'
+
+#  pod 'FirebaseCore', :git => 'https://github.com/firebase/firebase-ios-sdk.git', :branch => 'main'
+#  pod 'FirebaseFirestore', :git => 'https://github.com/firebase/firebase-ios-sdk.git', :branch => 'main'
 
   target 'MessengerTests' do
     inherit! :search_paths

@@ -11,6 +11,10 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
 
+import FirebaseCore
+import FirebaseFirestore
+
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     static var shared: AppDelegate?
@@ -21,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
 
+        FirebaseApp.configure()
+        let db = Firestore.firestore()
         print("url của file là: \(urls)")
         let options = FirebaseOptions(contentsOfFile: Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")!)
         options?.databaseURL = "https://messanger-dbcc8-default-rtdb.asia-southeast1.firebasedatabase.app"
